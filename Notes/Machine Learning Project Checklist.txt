@@ -11,4 +11,64 @@ Machine Learning Checklist:
 -----------------------------------------------------------
 
 For Chapter 2 - Housing Corporation
-1. 
+
+Task - Use California census data to build a model of housing prices in the tate. 
+    Metrics:
+        Population
+        Median Income
+        Median Housing Price
+    Per Block Group in CA 
+        (Blocks / Districts - 600 - 3000 ppl)
+
+1. Frame:
+    What is the use case? 
+    Model's Output = Prediction of a district's median housing prices
+        Will be fed into another machine learning system and other signals
+    What is the Current Situation? 
+        Currently estimated manually by experts - estimating based on some math rules
+
+What Kind of training supervision will the model need?
+    Supervised
+    Unsupervised
+    Semi-Supervised
+    Self-Supervised
+    Reinforcement Learning Task
+
+AND type
+    Classification
+    Regression
+    other
+
+OUR CASE:
+    Supervised + Multiple Univariate Regression  (Mult Features, One Ouput)
+    No Continuing data coming in
+
+2. Performance Measure:
+Root Mean Squared Error (From stats - Used for Regression)
+RMSE =
+    sqrt(1/m * sum(h(x)-y)^2)
+
+Notation
+    m - number of instances (size of training/validation set)
+    x_i = vector of feature values for ith instance
+    y_i = output of ith instance 
+
+    X = input Matrix + Containg Feature values
+        Each ROW is an Instance (x_1 is first row)
+    h = prediction function (whatever method used to get prediction)
+        y_hat_i = h(x_i)
+    RMSE(X, h) = Cost function
+
+Mean Absolute Error / Average Absolute Deviation
+MAE = 
+    1/m * sum(abs(h(x_i)- y_i))
+
+RMSE -> || . ||  (Euclidean Norm) - Sensitive to Outliers
+MAE -> | . | (Manhatten Norm)
+
+3. Check Assumptions
+    Downstream Conversion
+    Make sure that you want Prices and not just Categories (regression vs Classification)
+    
+
+
